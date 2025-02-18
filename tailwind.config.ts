@@ -9,8 +9,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
+        primary: {
+          DEFAULT: 'var(--primary)',
+          light: 'var(--primary-light)',
+          dark: 'var(--primary-dark)',
+        },
+        accent: {
+          DEFAULT: 'var(--accent)',
+          light: 'var(--accent-light)',
+        },
+        text: {
+          DEFAULT: 'var(--text)',
+          light: 'var(--text-light)',
+        },
+        background: 'var(--background)',
         foreground: "var(--foreground)",
+        'card-bg': 'var(--card-bg)',
       },
     },
   },

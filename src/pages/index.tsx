@@ -1,114 +1,201 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import Head from 'next/head'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { BackgroundPattern } from '../components/BackgroundPattern';
+import { AnimatedBackground } from '../components/AnimatedBackground';
+import { Footer } from '../components/Footer';
+import { Contact } from '@/components/Contact';
+import { Logo } from '../components/Logo';
+import { Menu } from '@/components/Menu';
 
 export default function Home() {
   return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/pages/index.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <Head>
+        <title>Build By Denys</title>
+        <meta name="description" content="Portfolio showcasing creative work" />
+      </Head>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <header className="min-h-screen relative overflow-hidden flex flex-col">
+        <AnimatedBackground />
+        <nav className="fixed w-full z-50 bg-background">
+          <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+            <Logo />
+            <Menu />
+          </div>
+        </nav>
+
+        <motion.section
+          id='first-section'
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="flex-1 flex items-center justify-center px-4 pt-20 pb-16"
+        >
+          <div className="text-center max-w-4xl w-full">
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="text-primary font-medium mb-4"
+            >
+              Welcome to my creative space
+            </motion.p>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-primary-light to-primary bg-clip-text text-transparent">
+              Crafting Stunning Digital Experiences
+            </h1>
+            <p className="text-text-light mb-8 text-lg max-w-2xl mx-auto">
+              Transforming ideas into beautiful, functional websites
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-primary to-primary-dark text-white font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-primary/30 transition-all duration-300"
+            >
+              Explore My Work
+            </motion.button>
+          </div>
+        </motion.section>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
+        >
+          <svg className="w-6 h-6 text-primary" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </motion.div>
+      </header>
+
+      <section id="portfolio" className="relative py-20 bg-white/80 backdrop-blur-sm w-full">
+        <BackgroundPattern className="rotate-3 scale-125 overflow-hidden" />
+        <div className="container mx-auto px-4 relative">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-4xl font-bold text-center mb-12"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            Featured Projects
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[1, 2, 3].map((item) => (
+              <motion.div
+                key={item}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                whileHover={{ y: -10 }}
+                className="bg-background rounded-lg overflow-hidden shadow-lg"
+              >
+                <div className="relative h-64">
+                  <Image
+                    src={`/project${item}.jpg`}
+                    alt={`Project ${item}`}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2">Project Title {item}</h3>
+                  <p className="text-gray-600 mb-4">Brief project description here.</p>
+                  <button className="text-primary font-semibold hover:underline">
+                    View Project
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </section>
+
+      <section id="about" className="relative py-20 w-full">
+        <BackgroundPattern className="-rotate-3 opacity-50 overflow-hidden" />
+        <div className="container mx-auto px-4 relative">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+            >
+              <h2 className="text-4xl font-bold mb-6">About Me</h2>
+              <p className="text-gray-600 mb-6">
+                I&apos;m a passionate web developer focused on creating beautiful and functional websites.
+                With expertise in modern web technologies, I bring ideas to life through clean code
+                and intuitive design.
+              </p>
+              <div className="flex gap-4">
+                {['React', 'Next.js', 'TypeScript', 'Tailwind'].map((skill) => (
+                  <span
+                    key={skill}
+                    className="bg-gradient-to-r from-primary/10 to-accent/10 text-primary px-4 py-2 rounded-full text-sm hover:from-primary/20 hover:to-accent/20 transition-colors"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="relative aspect-square max-w-[640px] w-full mx-auto rounded-lg overflow-hidden shadow-xl"
+            >
+              <Image
+                src="/profile.jpg"
+                alt="Profile"
+                fill
+                sizes="(max-width: 768px) 100vw, 640px"
+                priority
+                className="object-cover object-center hover:scale-105 transition-transform duration-500"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="relative py-20 bg-white/80 backdrop-blur-sm w-full">
+        <BackgroundPattern className="rotate-6 scale-150 overflow-hidden" />
+        <div className="container mx-auto px-4 relative">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-4xl font-bold text-center mb-12"
+          >
+            Services
+          </motion.h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'Web Development',
+                description: 'Custom websites built with modern technologies',
+                icon: '💻'
+              },
+              {
+                title: 'UI/UX Design',
+                description: 'Intuitive and beautiful user interfaces',
+                icon: '🎨'
+              },
+              {
+                title: 'Optimization',
+                description: 'Performance and SEO optimization',
+                icon: '⚡'
+              }
+            ].map((service) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.05 }}
+                className="p-6 bg-card-bg backdrop-blur-sm rounded-lg text-center shadow-lg border border-primary/10 hover:border-primary/20 transition-colors"
+              >
+                <div className="text-4xl mb-4">{service.icon}</div>
+                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                <p className="text-gray-600">{service.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <Contact />
+      <Footer />
+    </>
+  )
 }
