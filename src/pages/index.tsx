@@ -7,6 +7,7 @@ import { Footer } from '../components/Footer';
 import { Contact } from '@/components/Contact';
 import { Logo } from '../components/Logo';
 import { Menu } from '@/components/Menu';
+import { projects } from '@/data/projects';
 
 export default function Home() {
   return (
@@ -70,41 +71,62 @@ export default function Home() {
 
       <section id="portfolio" className="relative py-20 bg-white/80 backdrop-blur-sm w-full">
         <BackgroundPattern className="rotate-3 scale-125 overflow-hidden" />
-        <div className="container mx-auto px-4 relative">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl font-bold text-center mb-12"
-          >
-            Featured Projects
-          </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item) => (
-              <motion.div
-                key={item}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                whileHover={{ y: -10 }}
-                className="bg-background rounded-lg overflow-hidden shadow-lg"
-              >
-                <div className="relative h-64">
-                  <Image
-                    src={`/project${item}.jpg`}
-                    alt={`Project ${item}`}
-                    layout="fill"
-                    objectFit="cover"
-                  />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              whileHover={{ y: -10 }}
+              className="bg-background rounded-lg overflow-hidden shadow-lg"
+            >
+              <div className="relative h-64">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                <p className="text-text-light mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="text-xs px-3 py-1 bg-primary/5 text-primary rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">Project Title {item}</h3>
-                  <p className="text-gray-600 mb-4">Brief project description here.</p>
-                  <button className="text-primary font-semibold hover:underline">
-                    View Project
-                  </button>
+                <div className="flex gap-4">
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary font-semibold hover:underline"
+                    >
+                      Live Demo
+                    </a>
+                  )}
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary font-semibold hover:underline"
+                    >
+                      View Code
+                    </a>
+                  )}
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 
