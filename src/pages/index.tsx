@@ -8,6 +8,8 @@ import { Contact } from '@/components/Contact';
 import { Logo } from '../components/Logo';
 import { Menu } from '@/components/Menu';
 import { projects } from '@/data/projects';
+import { FiCode, FiLayout, FiZap } from 'react-icons/fi';
+import { FAQ } from '../components/FAQ';
 
 export default function Home() {
   return (
@@ -86,7 +88,7 @@ export default function Home() {
                   alt={project.title}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
               <div className="p-6">
@@ -188,17 +190,17 @@ export default function Home() {
               {
                 title: 'Web Development',
                 description: 'Custom websites built with modern technologies',
-                icon: '💻'
+                icon: <FiCode className="w-12 h-12 text-primary" />
               },
               {
                 title: 'UI/UX Design',
                 description: 'Intuitive and beautiful user interfaces',
-                icon: '🎨'
+                icon: <FiLayout className="w-12 h-12 text-primary" />
               },
               {
                 title: 'Optimization',
                 description: 'Performance and SEO optimization',
-                icon: '⚡'
+                icon: <FiZap className="w-12 h-12 text-primary" />
               }
             ].map((service) => (
               <motion.div
@@ -206,16 +208,19 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ scale: 1.05 }}
-                className="p-6 bg-card-bg backdrop-blur-sm rounded-lg text-center shadow-lg border border-primary/10 hover:border-primary/20 transition-colors"
+                className="p-8 bg-card-bg backdrop-blur-sm rounded-lg text-center shadow-lg border border-primary/10 hover:border-primary/20 transition-all duration-300"
               >
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+                <div className="mb-6 inline-flex p-4 rounded-full bg-primary/5">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                <p className="text-text-light">{service.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
+      <FAQ />
       <Contact />
       <Footer />
     </>

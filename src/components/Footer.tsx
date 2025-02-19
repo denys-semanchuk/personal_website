@@ -5,28 +5,28 @@ import { FaGithub, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
 const socialLinks = [
-  { 
-    icon: <MdEmail className="w-5 h-5" />, 
-    text: 'Email', 
-    href: 'mailto:denys@email.com',
+  {
+    icon: <MdEmail className="w-5 h-5" />,
+    text: 'Email',
+    href: 'mailto:semanchukdenys@gmail.com',
     ariaLabel: 'Send email'
   },
-  { 
-    icon: <FaLinkedinIn className="w-5 h-5" />, 
-    text: 'LinkedIn', 
-    href: 'https://linkedin.com/',
+  {
+    icon: <FaLinkedinIn className="w-5 h-5" />,
+    text: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/denys-semanchuk-3a22bb228/',
     ariaLabel: 'Visit LinkedIn profile'
   },
-  { 
-    icon: <FaGithub className="w-5 h-5" />, 
-    text: 'GitHub', 
-    href: 'https://github.com/',
+  {
+    icon: <FaGithub className="w-5 h-5" />,
+    text: 'GitHub',
+    href: 'https://github.com/denys-semanchuk',
     ariaLabel: 'Visit GitHub profile'
   },
-  { 
-    icon: <FaTwitter className="w-5 h-5" />, 
-    text: 'Twitter', 
-    href: 'https://twitter.com/',
+  {
+    icon: <FaTwitter className="w-5 h-5" />,
+    text: 'Twitter',
+    href: 'https://x.com/DenysSemanchuk/',
     ariaLabel: 'Visit Twitter profile'
   }
 ];
@@ -34,7 +34,7 @@ const socialLinks = [
 const navigationLinks = {
   Company: ['About', 'Services', 'Portfolio'],
   Support: ['Contact', 'FAQ', 'Privacy Policy'],
-  Contact: ['denys@email.com', '+1234567890', 'Location, Country']
+  Contact: ['semanchukdenys@gmail.com', 'Paris, France']
 };
 
 export const Footer = () => {
@@ -42,11 +42,9 @@ export const Footer = () => {
     <footer className="relative pt-20 pb-10 bg-gradient-to-b from-background to-primary/5">
       <BackgroundPattern className="-rotate-1 opacity-30 overflow-hidden" />
       <div className="container mx-auto px-4 relative">
-        {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          {/* Brand Section */}
           <div className="col-span-1 md:col-span-2 lg:col-span-1">
-            <motion.h3 
+            <motion.h3
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               className="text-2xl font-bold mb-6 text-primary"
@@ -54,7 +52,7 @@ export const Footer = () => {
               BuildByDenys
             </motion.h3>
             <p className="text-text-light mb-6 max-w-md">
-              Crafting exceptional digital experiences through innovative web development 
+              Crafting exceptional digital experiences through innovative web development
               and creative solutions.
             </p>
             <div className="flex gap-4">
@@ -97,7 +95,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-primary/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               className="text-text-light text-sm"
