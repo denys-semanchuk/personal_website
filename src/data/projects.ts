@@ -13,7 +13,7 @@ export const projects: Project[] = [
     id: 1,
     title: "Next Pizza",
     description: "a fast and convenient pizza ordering service",
-    image: "/projects/project1.png",
+    image: "/projects/project4.png",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Zustand"],
     liveUrl: "https://next-pizza-phi-murex.vercel.app",
     githubUrl: "https://github.com/denys-semanchuk/pizza"
