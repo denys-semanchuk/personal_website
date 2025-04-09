@@ -88,7 +88,7 @@ export default function Home() {
                   alt={project.title}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-contain"
+                  className="object-cover"
                 />
               </div>
               <div className="p-6">
