@@ -71,9 +71,9 @@ export default function Home() {
         </motion.div>
       </header>
 
-      <section id="portfolio" className="relative py-20 bg-white/80 backdrop-blur-sm w-full max-w-[1600px] mx-auto px-5">
+      <section id="portfolio" className="relative py-20 bg-white/80 backdrop-blur-sm w-full">
         <BackgroundPattern className="rotate-3 scale-125 overflow-hidden" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1600px] mx-auto px-5">
           {projects.map((project) => (
             <motion.div
               key={project.id}
