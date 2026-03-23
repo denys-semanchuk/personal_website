@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 
-const menuItems = ['Portfolio', 'About', 'Services', 'Contact']
+const menuItems = ['Portfolio', 'À propos', 'Services', 'Contact']
 
 export const Menu = () => {
   const [isMobile, setIsMobile] = useState(false)
@@ -26,7 +26,7 @@ export const Menu = () => {
           className={isMobile ? 'text-center py-4 border-b border-primary/10' : ''}
         >
           <a 
-            href={`#${item.toLowerCase()}`} 
+            href={`#${item.toLowerCase().replace(/\s+/g, '-').normalize('NFD').replace(/[\u0300-\u036f]/g, '')}`} 
             className="text-text hover:text-primary transition-colors"
             onClick={() => isMobile && setIsOpen(false)}
           >
