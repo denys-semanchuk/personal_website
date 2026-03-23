@@ -10,28 +10,28 @@ export function EmailTemplate(props: EmailProps) {
   const { from, text } = props;
   
   return (
-    <Html lang="en">
+    <Html lang="fr">
       <Body style={styles.body}>
         <Container style={styles.container}>
           <Section style={styles.header}>
-            <Heading as="h1" style={styles.heading}>New Contact Form Message</Heading>
+            <Heading as="h1" style={styles.heading}>Nouveau message du formulaire de contact</Heading>
           </Section>
           
           <Section style={styles.content}>
-            <Text style={styles.label}>From:</Text>
+            <Text style={styles.label}>De :</Text>
             <Text style={styles.value}>{from}</Text>
             
             <Hr style={styles.divider} />
             
-            <Text style={styles.label}>Message:</Text>
+            <Text style={styles.label}>Message :</Text>
             <Text style={styles.messageBox}>{text}</Text>
           </Section>
           
           <Section style={styles.footer}>
             <Text style={styles.footerText}>
-              This email was sent from your website contact form at {new Date().toLocaleDateString()}
+              Cet e-mail a été envoyé depuis le formulaire de contact de votre site le {new Date().toLocaleDateString('fr-FR')}
             </Text>
-            <Link href="https://buildbydenys.com" style={styles.link}>buildbydenys.com</Link>
+            <Link href="https://builtbydenys.com" style={styles.link}>buildbydenys.com</Link>
           </Section>
         </Container>
       </Body>
@@ -39,7 +39,7 @@ export function EmailTemplate(props: EmailProps) {
   );
 }
 
-// Styles object for better organization
+// Objet de styles pour une meilleure organisation
 const styles = {
   body: {
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',

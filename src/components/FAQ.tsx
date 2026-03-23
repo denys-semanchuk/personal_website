@@ -51,7 +51,7 @@ export const FAQ = () => {
           className="max-w-3xl mx-auto"
         >
           <h2 className="text-4xl font-bold text-center mb-12">
-            Frequently Asked Questions
+            Questions fréquentes
           </h2>
           <div className="space-y-2">
             {faqData.map((item, index) => (

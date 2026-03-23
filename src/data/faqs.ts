@@ -5,23 +5,23 @@ export interface IFAQItem {
 
 export const faqData: IFAQItem[] = [
   {
-    question: "What services do you offer?",
-    answer: "I specialize in web development, UI/UX design, and performance optimization. This includes custom website development, responsive design, and SEO optimization."
+    question: "Quels services proposez-vous ?",
+    answer: "Je suis spécialisé dans le développement web, le design UI/UX et l’optimisation des performances. Cela comprend le développement de sites web sur mesure, le design responsive et l’optimisation SEO."
   },
   {
-    question: "What technologies do you use?",
-    answer: "I primarily work with modern web technologies including React, Next.js, TypeScript, and Tailwind CSS. I also have experience with various backend technologies and databases."
+    question: "Quelles technologies utilisez-vous ?",
+    answer: "Je travaille principalement avec des technologies web modernes, notamment React, Next.js, TypeScript et Tailwind CSS. J’ai également de l’expérience avec diverses technologies backend et bases de données."
   },
   {
-    question: "How long does a typical project take?",
-    answer: "Project timelines vary depending on complexity and scope. A simple website might take 2-4 weeks, while more complex applications can take 2-3 months or more."
+    question: "Combien de temps prend un projet typique ?",
+    answer: "La durée d’un projet varie selon sa complexité et son périmètre. Un site web simple peut prendre entre 2 et 4 semaines, tandis que des applications plus complexes peuvent prendre 2 à 3 mois ou davantage."
   },
   {
-    question: "Do you offer maintenance services?",
-    answer: "Yes, I offer ongoing maintenance and support services to ensure your website remains up-to-date and performs optimally."
+    question: "Proposez-vous des services de maintenance ?",
+    answer: "Oui, je propose des services de maintenance et de support continus afin de garantir que votre site web reste à jour et fonctionne de manière optimale."
   },
   {
-    question: "How do you handle project communication?",
-    answer: "I maintain regular communication through email, scheduled video calls, and project management tools to ensure transparency and timely updates."
+    question: "Comment gérez-vous la communication pendant un projet ?",
+    answer: "Je maintiens une communication régulière par e-mail, via des appels vidéo planifiés et des outils de gestion de projet afin d’assurer la transparence et des mises à jour en temps voulu."
   }
 ];

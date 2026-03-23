@@ -7,33 +7,33 @@ import { MdEmail } from 'react-icons/md';
 const socialLinks = [
   {
     icon: <MdEmail className="w-5 h-5" />,
-    text: 'Email',
+    text: 'E-mail',
     href: 'mailto:semanchukdenys@gmail.com',
-    ariaLabel: 'Send email'
+    ariaLabel: 'Envoyer un e-mail'
   },
   {
     icon: <FaLinkedinIn className="w-5 h-5" />,
     text: 'LinkedIn',
     href: 'https://www.linkedin.com/in/denys-semanchuk-3a22bb228/',
-    ariaLabel: 'Visit LinkedIn profile'
+    ariaLabel: 'Voir le profil LinkedIn'
   },
   {
     icon: <FaGithub className="w-5 h-5" />,
     text: 'GitHub',
     href: 'https://github.com/denys-semanchuk',
-    ariaLabel: 'Visit GitHub profile'
+    ariaLabel: 'Voir le profil GitHub'
   },
   {
     icon: <FaTwitter className="w-5 h-5" />,
     text: 'Twitter',
     href: 'https://x.com/DenysSemanchuk/',
-    ariaLabel: 'Visit Twitter profile'
+    ariaLabel: 'Voir le profil Twitter'
   }
 ];
 
 const navigationLinks = {
-  Company: ['About', 'Services', 'Portfolio'],
-  Support: ['Contact', 'FAQ', 'Privacy Policy'],
+  Entreprise: ['À propos', 'Services', 'Portfolio'],
+  Assistance: ['Contact', 'FAQ', 'Politique de confidentialité'],
   Contact: ['semanchukdenys@gmail.com', 'Paris, France']
 };
 
@@ -52,8 +52,8 @@ export const Footer = () => {
               BuildByDenys
             </motion.h3>
             <p className="text-text-light mb-6 max-w-md">
-              Crafting exceptional digital experiences through innovative web development
-              and creative solutions.
+              Je crée des expériences numériques exceptionnelles grâce à un développement web innovant
+              et des solutions créatives.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((link) => (
@@ -72,7 +72,6 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Navigation Links */}
           {Object.entries(navigationLinks).map(([title, links]) => (
             <div key={title}>
               <h4 className="text-lg font-semibold mb-6">{title}</h4>
@@ -92,7 +91,6 @@ export const Footer = () => {
           ))}
         </div>
 
-        {/* Bottom Bar */}
         <div className="pt-8 border-t border-primary/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <motion.p
@@ -100,10 +98,10 @@ export const Footer = () => {
               whileInView={{ opacity: 1 }}
               className="text-text-light text-sm"
             >
-              © {new Date().getFullYear()} BuildByDenys. All rights reserved.
+              © {new Date().getFullYear()} BuildByDenys. Tous droits réservés.
             </motion.p>
             <div className="flex gap-6">
-              {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
+              {['Politique de confidentialité', "Conditions d'utilisation", 'Politique relative aux cookies'].map((item) => (
                 <motion.a
                   key={item}
                   href="#"

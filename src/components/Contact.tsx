@@ -17,14 +17,14 @@ export const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           className="max-w-xl mx-auto text-center"
         >
-          <h2 className="text-4xl font-bold mb-4">Get in Touch</h2>
+          <h2 className="text-4xl font-bold mb-4">Entrer en contact</h2>
           <p className="text-text-light mb-8">
-            Have a question or want to work together?
+            Vous avez une question ou vous souhaitez travailler avec moi ?
           </p>
 
           {status === 'success' ? (
             <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative">
-              <p>Message sent successfully! I&apos;ll get back to you soon.</p>
+              <p>Message envoyé avec succès ! Je vous répondrai bientôt.</p>
             </div>
           ) : (
             <Formik
@@ -48,11 +48,11 @@ export const Contact = () => {
                     resetForm();
                   } else {
                     setStatus('error');
-                    console.error('Failed to send email:', data.error);
+                    console.error('Échec de l’envoi de l’e-mail :', data.error);
                   }
                 } catch (error) {
                   setStatus('error');
-                  console.error('Error sending email:', error);
+                  console.error('Erreur lors de l’envoi de l’e-mail :', error);
                 }
               }}
             >
@@ -61,14 +61,14 @@ export const Contact = () => {
                   <Field
                     type="email"
                     name="email"
-                    placeholder="Your email"
+                    placeholder="Votre e-mail"
                     className="px-4 py-2 rounded-full bg-background/50 border border-primary/10 focus:border-primary/30 focus:outline-none focus:ring-2 focus:ring-primary/20"
                   />
                   <ErrorMessage name="email" component="div" className="text-red-500 text-sm text-left" />
                   <Field
                     as="textarea"
                     name="message"
-                    placeholder="Your message"
+                    placeholder="Votre message"
                     rows={3}
                     className="px-4 py-2 rounded-2xl bg-background/50 border border-primary/10 focus:border-primary/30 focus:outline-none focus:ring-2 focus:ring-primary/20 resize-none"
                   />
@@ -76,7 +76,7 @@ export const Contact = () => {
                   
                   {status === 'error' && (
                     <div className="text-red-500 text-sm">
-                      Something went wrong. Please try again later.
+                      Une erreur s’est produite. Veuillez réessayer plus tard.
                     </div>
                   )}
                   
@@ -89,7 +89,7 @@ export const Contact = () => {
                       (isSubmitting || status === 'loading') ? 'opacity-70 cursor-not-allowed' : ''
                     }`}
                   >
-                    {status === 'loading' ? 'Sending...' : 'Send Message'}
+                    {status === 'loading' ? 'Envoi en cours...' : 'Envoyer le message'}
                   </motion.button>
                 </Form>
               )}

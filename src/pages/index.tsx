@@ -15,8 +15,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Build By Denys</title>
-        <meta name="description" content="Portfolio showcasing creative work" />
+        <title>Built By Denys</title>
+        <meta name="description" content="Portfolio présentant des créations originales" />
       </Head>
 
       <header className="min-h-screen relative overflow-hidden flex flex-col">
@@ -41,20 +41,20 @@ export default function Home() {
               transition={{ delay: 0.2 }}
               className="text-primary font-medium mb-4"
             >
-              Welcome to my creative space
+              Bienvenue dans mon univers créatif
             </motion.p>
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-primary-light to-primary bg-clip-text text-transparent">
-              Crafting Stunning Digital Experiences
+              Je crée des expériences numériques remarquables
             </h1>
             <p className="text-text-light mb-8 text-lg max-w-2xl mx-auto">
-              Transforming ideas into beautiful, functional websites
+              Je transforme des idées en sites web beaux et fonctionnels
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-primary to-primary-dark text-white font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-primary/30 transition-all duration-300"
             >
-              Explore My Work
+              Découvrir mon travail
             </motion.button>
           </div>
         </motion.section>
@@ -112,7 +112,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="text-primary font-semibold hover:underline"
                     >
-                      Live Demo
+                      Démo en direct
                     </a>
                   )}
                   {project.githubUrl && (
@@ -122,7 +122,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="text-primary font-semibold hover:underline"
                     >
-                      View Code
+                      Voir le code
                     </a>
                   )}
                 </div>
@@ -140,11 +140,11 @@ export default function Home() {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
             >
-              <h2 className="text-4xl font-bold mb-6">About Me</h2>
+              <h2 className="text-4xl font-bold mb-6">À propos de moi</h2>
               <p className="text-gray-600 mb-6">
-                I&apos;m a passionate web developer focused on creating beautiful and functional websites.
-                With expertise in modern web technologies, I bring ideas to life through clean code
-                and intuitive design.
+                Je suis un développeur web passionné, spécialisé dans la création de sites web beaux et fonctionnels.
+                Grâce à ma maîtrise des technologies web modernes, je donne vie aux idées avec un code propre
+                et un design intuitif.
               </p>
               <div className="flex gap-4">
                 {['React', 'Next.js', 'TypeScript', 'Tailwind'].map((skill) => (
@@ -164,7 +164,7 @@ export default function Home() {
             >
               <Image
                 src="/profile.jpg"
-                alt="Profile"
+                alt="Profil"
                 fill
                 sizes="(max-width: 768px) 100vw, 640px"
                 priority
@@ -188,18 +188,18 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: 'Web Development',
-                description: 'Custom websites built with modern technologies',
+                title: 'Développement web',
+                description: 'Sites web sur mesure créés avec des technologies modernes',
                 icon: <FiCode className="w-12 h-12 text-primary" />
               },
               {
-                title: 'UI/UX Design',
-                description: 'Intuitive and beautiful user interfaces',
+                title: 'Design UI/UX',
+                description: 'Interfaces utilisateur intuitives et esthétiques',
                 icon: <FiLayout className="w-12 h-12 text-primary" />
               },
               {
-                title: 'Optimization',
-                description: 'Performance and SEO optimization',
+                title: 'Optimisation',
+                description: 'Optimisation des performances et du référencement',
                 icon: <FiZap className="w-12 h-12 text-primary" />
               }
             ].map((service) => (
