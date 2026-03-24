@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 export const Logo = () => {
-  const letters = 'BuildByDenys'.split('');
+  const letters = 'BuiltByDenys'.split('');
   
   const container = {
     hidden: { opacity: 0 },

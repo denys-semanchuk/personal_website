@@ -49,7 +49,7 @@ export const Footer = () => {
               whileInView={{ opacity: 1 }}
               className="text-2xl font-bold mb-6 text-primary"
             >
-              BuildByDenys
+              BuiltByDenys
             </motion.h3>
             <p className="text-text-light mb-6 max-w-md">
               Je crée des expériences numériques exceptionnelles grâce à un développement web innovant
