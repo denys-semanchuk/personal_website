@@ -31,7 +31,7 @@ export function EmailTemplate(props: EmailProps) {
             <Text style={styles.footerText}>
               Cet e-mail a été envoyé depuis le formulaire de contact de votre site le {new Date().toLocaleDateString('fr-FR')}
             </Text>
-            <Link href="https://builtbydenys.com" style={styles.link}>buildbydenys.com</Link>
+            <Link href="https://builtbydenys.com" style={styles.link}>builtbydenys.com</Link>
           </Section>
         </Container>
       </Body>

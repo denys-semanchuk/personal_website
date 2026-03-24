@@ -15,7 +15,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const data = await resend.emails.send({
       from: 'onboarding@resend.dev',
       to: 'semanchukdenys@gmail.com',
-      subject: 'Buildbydenys.com contact form',
+      subject: 'Builtbydenys.com contact form',
       react: EmailTemplate({ from: email, text: message }),
     });
 

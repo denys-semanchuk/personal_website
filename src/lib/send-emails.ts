@@ -8,7 +8,7 @@ export const sendEmail = async (
   const { data, error } = await resend.emails.send({
     from: "onboarding@resend.dev",
     to: "semanchukdenys@gmail.com",
-    subject: "Buildbydenys.com contact form",
+    subject: "Builtbydenys.com contact form",
     text: '',
     react: template,
   });

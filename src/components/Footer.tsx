@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion';
 import { BackgroundPattern } from './BackgroundPattern';
-import { FaGithub, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaTwitter } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
 const socialLinks = [
@@ -10,12 +10,6 @@ const socialLinks = [
     text: 'E-mail',
     href: 'mailto:semanchukdenys@gmail.com',
     ariaLabel: 'Envoyer un e-mail'
-  },
-  {
-    icon: <FaLinkedinIn className="w-5 h-5" />,
-    text: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/denys-semanchuk-3a22bb228/',
-    ariaLabel: 'Voir le profil LinkedIn'
   },
   {
     icon: <FaGithub className="w-5 h-5" />,
@@ -98,7 +92,7 @@ export const Footer = () => {
               whileInView={{ opacity: 1 }}
               className="text-text-light text-sm"
             >
-              © {new Date().getFullYear()} BuildByDenys. Tous droits réservés.
+              © {new Date().getFullYear()} BuiltByDenys. Tous droits réservés.
             </motion.p>
             <div className="flex gap-6">
               {['Politique de confidentialité', "Conditions d'utilisation", 'Politique relative aux cookies'].map((item) => (
