@@ -182,16 +182,6 @@ export default function Home() {
                 site, mais de créer une présence en ligne claire,
                 professionnelle et utile pour vos clients.
               </p>
-              <div className="flex">
-                {["React", "Next.js", "TypeScript", "Tailwind"].map((skill) => (
-                  <span
-                    key={skill}
-                    className="bg-gradient-to-r from-primary/10 to-accent/10 text-primary px-4 py-2 rounded-full text-sm hover:from-primary/20 hover:to-accent/20 transition-colors"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
