@@ -182,7 +182,7 @@ export default function Home() {
                 site, mais de créer une présence en ligne claire,
                 professionnelle et utile pour vos clients.
               </p>
-              <div className="flex gap-4">
+              <div className="flex">
                 {["React", "Next.js", "TypeScript", "Tailwind"].map((skill) => (
                   <span
                     key={skill}
