@@ -5,23 +5,23 @@ export interface IFAQItem {
 
 export const faqData: IFAQItem[] = [
   {
-    question: "Quels services proposez-vous ?",
-    answer: "Je suis spécialisé dans le développement web, le design UI/UX et l’optimisation des performances. Cela comprend le développement de sites web sur mesure, le design responsive et l’optimisation SEO."
+    question: "Combien coûte un site web ?",
+    answer: "Le prix dépend du type de site, du nombre de pages et des fonctionnalités demandées.Un site vitrine simple commence généralement à partir de 400€, et un site plus complet peut coûter davantage selon les besoins du projet."
   },
   {
-    question: "Quelles technologies utilisez-vous ?",
-    answer: "Je travaille principalement avec des technologies web modernes, notamment React, Next.js, TypeScript et Tailwind CSS. J’ai également de l’expérience avec diverses technologies backend et bases de données."
+    question: "En combien de temps le site peut-il être prêt ?",
+    answer: "En général, un site simple peut être prêt en 7 à 10 jours. Le délai exact dépend du contenu à intégrer, du nombre de pages et de la rapidité des échanges pendant le projet."
   },
   {
-    question: "Combien de temps prend un projet typique ?",
-    answer: "La durée d’un projet varie selon sa complexité et son périmètre. Un site web simple peut prendre entre 2 et 4 semaines, tandis que des applications plus complexes peuvent prendre 2 à 3 mois ou davantage."
+    question: "Est-ce que vous travaillez avec des commerces locaux ?",
+    answer: "Oui, je travaille principalement avec des commerces locaux, indépendants et petites entreprises en France. Mon objectif est de créer des sites clairs, modernes et professionnels, adaptés à leur activité."
   },
   {
-    question: "Proposez-vous des services de maintenance ?",
-    answer: "Oui, je propose des services de maintenance et de support continus afin de garantir que votre site web reste à jour et fonctionne de manière optimale."
+    question: "Est-ce que je peux demander des modifications ?",
+    answer: "Oui, bien sûr. Des modifications sont prévues pendant le projet afin d’ajuster le site selon vos besoins et de garantir un résultat satisfaisant."
   },
   {
-    question: "Comment gérez-vous la communication pendant un projet ?",
-    answer: "Je maintiens une communication régulière par e-mail, via des appels vidéo planifiés et des outils de gestion de projet afin d’assurer la transparence et des mises à jour en temps voulu."
+    question: "Est-ce que vous proposez aussi la maintenance ?",
+    answer: "Oui, je peux proposer la maintenance, les mises à jour de contenu et les petites modifications après la mise en ligne du site. Cela permet de garder un site à jour et fonctionnel dans le temps."
   }
 ];

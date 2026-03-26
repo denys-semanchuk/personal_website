@@ -1,48 +1,69 @@
 export interface Project {
   id: number;
+  type?: string;
   title: string;
   description: string;
   image: string;
-  technologies: string[];
   liveUrl?: string;
   githubUrl?: string;
+  benefits: string[];
 }
 
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Next Pizza",
-    description: "un service de commande de pizzas rapide et pratique",
-    image: "/projects/project4.png",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Zustand"],
-    liveUrl: "https://next-pizza-phi-murex.vercel.app",
-    githubUrl: "https://github.com/denys-semanchuk/pizza"
+    type: "concept",
+    title: "Jardin Fleuri",
+    description:
+      "Site vitrine pour fleuriste de quartier. Galerie de créations, services de livraison, localisation et contact direct pour les commandes.",
+    image: "/projects/jardin-fleuri.png",
+    benefits: [
+      "Galerie florale élégante",
+      "Livraison locale mise en avant",
+      "Contact rapide pour les commandes",
+      "Image professionnelle du commerce",
+    ],
   },
   {
     id: 2,
-    title: "Application de gestion de tâches TaskMaster",
-    description: "Une application moderne de gestion de tâches développée avec Next.js, Redux et TypeScript",
-    image: "/projects/project1.png",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Redux"],
-    liveUrl: "https://to-do-application-next-node.vercel.app/dashboard",
-    githubUrl: "https://github.com/denys-semanchuk/ToDo-Application-Next-Node"
+    type: "concept",
+    title: "Prestige Cœur",
+    description:
+      "Plateforme professionnelle pour salon de coiffure. Présentation des coupes, équipe, tarifs, prise de RDV en ligne et localisation GPS.",
+    image: "/projects/prestige-coeur.png",
+    benefits: [
+      "Services et tarifs clairs",
+      "Équipe mise en avant",
+      "Réservation simple et rapide",
+      "Image premium du salon",
+    ],
   },
   {
     id: 3,
-    title: "Convertisseur de devises",
-    description: "Un convertisseur de devises rapide et fiable, utilisant des taux de change en temps réel.",
-    image: "/projects/project2.png",
-    technologies: ["React", "Framer Motion", "Tailwind CSS"],
-    liveUrl: "https://currency-converter-gamma-hazel.vercel.app/",
-    githubUrl: "https://github.com/denys-semanchuk/Currency-Converter"
+    type: "concept",
+    title: "La Maison du Goût",
+    description:
+      "Site pour petite épicerie de proximité. Présentation des spécialités, horaires, localisation et contact pour fidéliser la clientèle locale.",
+    image: "/projects/la-maison-du-gout.png",
+    benefits: [
+      "Spécialités mises en valeur",
+      "Horaires faciles à trouver",
+      "Contact local simplifié",
+      "Image de confiance",
+    ],
   },
-  {
-    id: 4,
-    title: "Application de notes QuickQuill",
-    description: "Une application de prise de notes moderne et riche en fonctionnalités.",
-    image: "/projects/project3.png",
-    technologies: ["React", "TypeScript", "Redux Toolkit"],
-    liveUrl: "https://notes-application-phi-one.vercel.app/",
-    githubUrl: "https://github.com/denys-semanchuk/Notes-Application"
-  }
+  // {
+  //   id: 4,
+  //   title: "Next Pizza",
+  //   description: "Un service de commande de pizzas rapide et pratique",
+  //   image: "/projects/next-pizza.png",
+  //   liveUrl: "https://next-pizza-phi-murex.vercel.app",
+  //   githubUrl: "https://github.com/denys-semanchuk/pizza",
+  //   benefits: [
+  //     "Commande rapide et intuitive",
+  //     "Parcours client simplifié",
+  //     "Présentation claire du menu",
+  //     "Expérience moderne et fluide",
+  //   ],
+  // },
 ];

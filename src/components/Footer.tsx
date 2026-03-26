@@ -46,8 +46,7 @@ export const Footer = () => {
               BuiltByDenys
             </motion.h3>
             <p className="text-text-light mb-6 max-w-md">
-              Je crée des expériences numériques exceptionnelles grâce à un développement web innovant
-              et des solutions créatives.
+              Sites web simples, modernes et professionnels pour aider les entreprises locales à mieux présenter leur activité.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((link) => (
