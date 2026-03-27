@@ -1,28 +1,24 @@
 import Head from "next/head";
-import { motion } from "framer-motion";
 import Image from "next/image";
-import { BackgroundPattern } from "../components/BackgroundPattern";
-import { AnimatedBackground } from "../components/AnimatedBackground";
-import { Footer } from "../components/Footer";
-import { Contact } from "@/components/Contact";
-import { Logo } from "../components/Logo";
-import { Menu } from "@/components/Menu";
-import { projects } from "@/data/projects";
-import { FiLayout } from "react-icons/fi";
+import { motion } from "framer-motion";
 import {
-  LuPalette,
-  LuSmartphone,
-  LuWrench,
-  LuStore,
+  LuBriefcase,
   LuChefHat,
   LuScissors,
-  LuBriefcase,
+  LuStore,
   LuTrendingUp,
-  LuFileText,
-  LuGlobe,
-  LuRefreshCw,
 } from "react-icons/lu";
-import { FAQ } from "../components/FAQ";
+
+import {
+  AnimatedBackground,
+  BackgroundPattern,
+  FAQ,
+  Footer,
+  Logo,
+} from "@/components";
+import { Contact, Menu } from "@/components";
+import { offers, services } from "@/data";
+import { Projects } from "@/components/Projects";
 
 export default function Home() {
   return (
@@ -94,76 +90,7 @@ export default function Home() {
         className="relative py-20 bg-white/80 backdrop-blur-sm w-full"
       >
         <BackgroundPattern className="rotate-3 scale-125 overflow-hidden" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1600px] mx-auto px-5">
-          {projects.map((project) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              whileHover={{ y: -10 }}
-              className="bg-background rounded-lg overflow-hidden shadow-lg"
-            >
-              <div className="relative h-64">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-text-light mb-4">{project.description}</p>
-                {project.benefits && (
-                  <div className="mb-4">
-                    <p className="text-sm font-semibold text-text mb-2">
-                      Points forts :
-                    </p>
-                    <ul className="space-y-1">
-                      {project.benefits.map((benefit) => (
-                        <li
-                          key={benefit}
-                          className="text-sm text-text-light flex items-center gap-2"
-                        >
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
-                          {benefit}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                {project.type === "concept" && (
-                  <span className="inline-block text-xs px-3 py-1 bg-primary/5 text-primary rounded-full mb-4">
-                    Projet conceptuel
-                  </span>
-                )}
-                <div className="flex gap-4">
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary font-semibold hover:underline"
-                    >
-                      Démo en direct
-                    </a>
-                  )}
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary font-semibold hover:underline"
-                    >
-                      Voir le code
-                    </a>
-                  )}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        <Projects />
       </section>
 
       <section id="a-propos" className="relative py-20 w-full">
@@ -215,32 +142,7 @@ export default function Home() {
             Services
           </motion.h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Création de site vitrine",
-                description:
-                  "Site simple et professionnel pour présenter votre activité, vos services et vos coordonnées.",
-                icon: <LuPalette className="w-12 h-12 text-primary" />,
-              },
-              {
-                title: "Refonte de site existant",
-                description:
-                  "Modernisation d'un ancien site pour améliorer l'image de votre entreprise.",
-                icon: <FiLayout className="w-12 h-12 text-primary" />,
-              },
-              {
-                title: "Site avec prise de contact / réservation",
-                description:
-                  "Intégration de formulaire, bouton d'appel, WhatsApp ou système de réservation selon votre activité.",
-                icon: <LuSmartphone className="w-12 h-12 text-primary" />,
-              },
-              {
-                title: "Maintenance et mises à jour",
-                description:
-                  "Petites modifications, mises à jour de contenu et accompagnement après la mise en ligne.",
-                icon: <LuWrench className="w-12 h-12 text-primary" />,
-              },
-            ].map((service) => (
+            {services.map((service) => (
               <motion.div
                 key={service.title}
                 initial={{ opacity: 0, y: 20 }}
@@ -367,29 +269,7 @@ export default function Home() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {[
-              {
-                icon: <LuFileText className="w-10 h-10 text-primary" />,
-                title: "Site 1 page",
-                price: "À partir de 400€",
-                description:
-                  "Solution simple pour débuter. Parfait pour afficher vos horaires, services et coordonnées.",
-              },
-              {
-                icon: <LuGlobe className="w-10 h-10 text-primary" />,
-                title: "Site vitrine complet",
-                price: "À partir de 600€",
-                description:
-                  "Présentation complète de votre activité. Galerie, descriptions, prise de contact, localisation.",
-              },
-              {
-                icon: <LuRefreshCw className="w-10 h-10 text-primary" />,
-                title: "Refonte & modernisation",
-                price: "À partir de 900€",
-                description:
-                  "Transformer votre ancien site en plateforme professionnelle et moderne.",
-              },
-            ].map((plan, index) => (
+            {offers.map((plan, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
