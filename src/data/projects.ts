@@ -11,7 +11,21 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 1,
+  id: 1,
+  title: "VoltBuyer",
+  description:
+    "Site vitrine professionnel pour un acheteur basé à Moscou. Présentation des services d'achat sur les marchés russes, importations depuis la Chine et la Turquie, fulfillment pour marketplaces.",
+  image: "/projects/volt-buyer.png",
+  liveUrl: "https://volt-buyer.ru",
+  benefits: [
+    "Design sombre avec identité visuelle forte",
+    "Sections services, témoignages et produits",
+    "Intégration Telegram et WhatsApp",
+    "Déployé clé en main avec domaine connecté",
+  ],
+},
+  {
+    id: 2,
     type: "concept",
     title: "Jardin Fleuri",
     description:
@@ -25,7 +39,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     type: "concept",
     title: "Prestige Cœur",
     description:
@@ -39,7 +53,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     type: "concept",
     title: "La Maison du Goût",
     description:
